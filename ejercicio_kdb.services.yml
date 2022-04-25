@@ -1,0 +1,4 @@
+services:
+  ejercicio_kdb_services:
+   class: 'Drupal\ejercicio_kdb\Services\EjercicioKdbServices'
+   arguments: []

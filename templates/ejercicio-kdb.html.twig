@@ -1,0 +1,36 @@
+{#
+/**
+ * @file ejemplo__kdb.html.twig
+ * Default theme implementation to present Ejemplo_kdb data.
+ *
+ * This template is used when viewing Ejemplo_kdb pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_ejemplo__kdb()
+ *
+ * @ingroup themeable
+ */
+#}
+     <table class="table table-bordered table-striped table-hover">
+      <tbody>
+       <tr>
+         <td>Id</td>
+         <td>Dato 1</td>
+         <td>Dato 2</td>
+         <td>Resultado</td>
+       </tr>
+      {% for d in data %}
+        <tr>
+          <td>{{ d.id }}</td>
+          <td>{{ d.dato_1 }}</td>
+          <td>{{ d.dato_2 }}</td>
+          <td>{{ d.field_resultado }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>

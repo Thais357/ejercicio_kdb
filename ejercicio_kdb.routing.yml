@@ -1,0 +1,7 @@
+example.my_page:
+  path: '/ejercicio/kdb'
+  defaults:
+    _controller: '\Drupal\ejercicio_kdb\Controller\EjercicioKdbController::getKdbEntities'
+    _title: 'Ejercicio Kdb Page'
+  requirements:
+    _permission: 'access content'

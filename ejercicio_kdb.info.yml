@@ -1,0 +1,5 @@
+name: Ejercicio Kdb
+type: module
+description: Ejercicio Kdb
+package: "Kdb module"
+core_version_requirement: 9.x

@@ -1,0 +1,50 @@
+<?php
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\ejercicio_kdb\Plugin\Field\FieldType\ResultadoItem;
+use Drupal\ejercicio_kdb\Plugin\views\field\ResultadoViewsField;
+
+/**
+* Implements hook_entity_base_field_info().
+*/
+function entity_reference_test_entity_base_field_info(EntityTypeInterface $entity_type) {
+$fields = array();
+
+if ($entity_type->id() === 'Tags') {
+$fields['etiqueta'] = BaseFieldDefinition::create('entity_reference')
+->setLabel(t('Tags'))
+->setDescription(t('Tag asociado'))
+->setSetting('etiqueta', 'tag_id')
+->setSetting('handler', 'default');
+}
+
+return $fields;
+}
+
+function ejercicio_kdb_theme() {
+
+  return array(
+    'ejercicio-kdb' => array(
+      'variables' => array(
+        'data'   => NULL
+      ),
+      'template' => 'ejercicio-kdb'
+    ),
+  );
+
+/*
+  * Implements hook_entity_base_field_info().
+ */
+function ejercicio_kdb_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'ejemplo_kdb' || $entity_type->id() === 'node') {
+    //$resultado_field = new \Drupal\ejercicio_kdb\Plugin\views\field\ResultadoViewsField();
+    $fields['resultado'] = BaseFieldDefinition::create('integer')
+      ->setName('resultado')
+      ->setLabel(t('Resultado de suma'))
+      ->setComputed(TRUE)
+      ->setClass(ResultadoItem::class);
+ return $fields;
+ }
+}
+
+}
